@@ -1,0 +1,559 @@
+  * {
+      box-sizing: border-box;
+      font-family: system-ui, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: #0a2540;
+      line-height: 1.5;
+    }
+
+    .usecases {
+      padding: 120px 0;
+      overflow-x: visible;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    .label {
+      color: #8b5cf6;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 56px;
+      margin: 0 0 32px 0;
+      font-weight: 600;
+      line-height: 1.1;
+      color: #0a2540;
+    }
+
+    .desc {
+      font-size: 21px;
+      line-height: 1.6;
+      color: #425a70;
+      margin-bottom: 48px;
+      max-width: 900px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 12px;
+      margin: 32px 0 48px;
+    }
+
+    .tab {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: #f1f3f5;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .tab:hover {
+      background: #e3e8ee;
+    }
+
+    .tab.active {
+      background: #635bff;
+      color: white;
+    }
+
+    .slider-full {
+      width: 100vw;
+      overflow: visible;
+      position: relative;
+    }
+
+    .scroll-trigger-left,
+    .scroll-trigger-right {
+      position: absolute;
+      top: 0;
+      bottom: 10px;
+      width: 150px;
+      z-index: 20;
+      pointer-events: all;
+    }
+
+    .scroll-trigger-left {
+      left: 0;
+      cursor: w-resize;
+    }
+
+    .scroll-trigger-right {
+      right: 0;
+      cursor: e-resize;
+    }
+
+    .cards-row {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      /* REMOVED scroll-behavior: smooth - this was causing the issue! */
+      padding: 20px 24px 20px;
+      width: 100vw;
+      cursor: grab;
+      user-select: none;
+      scroll-padding-left: 24px;
+    }
+
+    .cards-row::before {
+      content: '';
+      flex-shrink: 0;
+      width: 0;
+    }
+
+    .cards-row:active {
+      cursor: grabbing;
+    }
+
+    .cards-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card {
+      min-width: 300px;
+      width: 300px;
+      height: 180px;
+      padding: 24px;
+      border-radius: 16px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      flex-shrink: 0;
+      position: relative;
+      overflow: visible;
+      cursor: pointer;
+      will-change: transform;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0);
+      pointer-events: none;
+      border-radius: 16px;
+      will-change: background;
+    }
+
+    .card:hover::after {
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .card p,
+    .card span {
+      position: relative;
+      z-index: 1;
+    }
+    
+    @media (min-width: 768px) {
+      .card {
+        width: calc((100vw - 96px - 96px) / 4.5);
+        min-width: calc((100vw - 96px - 96px) / 4.5);
+      }
+    }
+
+    .card:hover {
+      box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.4;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 14px;
+      opacity: 0.9;
+      margin-top: 8px;
+      position: relative;
+      z-index: 1;
+      transition: gap 0.3s ease;
+    }
+
+    .card:hover span {
+      gap: 8px;
+    }
+
+    .purple { 
+      background: linear-gradient(135deg, #8b3cf6, #b44cff); 
+    }
+    
+    .violet { 
+      background: linear-gradient(135deg, #6f7cff, #7f8cff); 
+    }
+    
+    .blue   { 
+      background: linear-gradient(135deg, #3f5efb, #5f7cff); 
+    }
+    
+    .navy   { 
+      background: linear-gradient(135deg, #001f3f, #003366); 
+    }
+
+    .helper-text {
+      margin-top: 28px;
+      color: #425466;
+      font-size: 16px;
+      min-height: 30px;
+      animation: slideUp 0.5s ease-out;
+      margin-bottom: 80px;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Testimonial Section */
+    .testimonial-section {
+      margin-top: 60px;
+    }
+
+    .testimonial-slider {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+    }
+
+    .testimonial-track {
+      display: flex;
+      width: 100%;
+      will-change: transform;
+    }
+
+    .testimonial-slide {
+      min-width: 100%;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .testimonial-card {
+      border-radius: 24px;
+      padding: 60px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      min-height: 360px;
+      height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      width: 100%;
+    }
+
+    .testimonial-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: inherit;
+      opacity: 0.85;
+      z-index: 1;
+    }
+
+    .testimonial-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: cover;
+      opacity: 0.25;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Background images for each card */
+    .bg-purple::before {
+      background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&q=80');
+    }
+
+    .bg-green::before {
+      background-image: url('https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80');
+    }
+
+    .bg-blue::before {
+      background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80');
+    }
+
+    .bg-orange::before {
+      background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80');
+    }
+
+    .testimonial-content {
+      position: relative;
+      z-index: 2;
+      max-width: 65%;
+    }
+
+    .testimonial-quote {
+      font-size: 22px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      font-weight: 400;
+    }
+
+    .testimonial-author {
+      font-size: 16px;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+
+    .testimonial-logo {
+      position: absolute;
+      top: 60px;
+      right: 60px;
+      z-index: 2;
+    }
+
+    .testimonial-logo img {
+      height: 48px;
+      filter: brightness(0) invert(1);
+    }
+
+    .testimonial-dots {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 0;
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    .testimonial-dot {
+      width: 40px;
+      height: 4px;
+      background: #d1d5db;
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      padding: 0;
+    }
+
+    .testimonial-dot.active {
+      background: white;
+      width: 60px;
+    }
+
+    .company-logos {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 0;
+      gap: 40px;
+      flex-wrap: wrap;
+      opacity: 0.6;
+    }
+
+    .company-logos img {
+      height: 36px;
+      opacity: 0.4;
+      transition: opacity 0.3s ease;
+      filter: grayscale(100%);
+    }
+
+    .company-logos img:hover {
+      opacity: 0.8;
+    }
+
+    /* Color variations */
+    .bg-purple {
+      background: linear-gradient(135deg, #6b2791 0%, #8b3fb8 100%);
+    }
+
+    .bg-green {
+      background: linear-gradient(135deg, #00c48c 0%, #00d896 100%);
+    }
+
+    .bg-blue {
+      background: linear-gradient(135deg, #0052cc 0%, #0066ff 100%);
+    }
+
+    .bg-orange {
+      background: linear-gradient(135deg, #f94c43 0%, #ff6b5e 100%);
+    }
+
+    @media (max-width: 1200px) {
+      h2 {
+        font-size: 40px;
+        margin-bottom: 24px;
+      }
+      
+      .desc {
+        font-size: 18px;
+        margin-bottom: 32px;
+      }
+      
+      .label {
+        margin-bottom: 16px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .usecases {
+        padding: 60px 0;
+      }
+
+      .container {
+        padding: 0 16px;
+      }
+
+      h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+
+      .desc {
+        font-size: 17px;
+        margin-bottom: 28px;
+      }
+      
+      .label {
+        font-size: 14px;
+        margin-bottom: 14px;
+      }
+
+      .tabs {
+        gap: 8px;
+        margin: 24px 0 32px;
+      }
+
+      .tab {
+        padding: 8px 14px;
+        font-size: 14px;
+      }
+
+      .card {
+        min-width: 280px;
+        width: 280px;
+        height: 160px;
+        padding: 20px;
+      }
+
+      .card p {
+        font-size: 16px;
+      }
+
+      .card span {
+        font-size: 13px;
+      }
+
+      .helper-text {
+        font-size: 14px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+      }
+
+      .testimonial-card {
+        padding: 40px 24px;
+        min-height: 450px;
+        height: 450px;
+      }
+
+      .testimonial-dots {
+        bottom: 30px;
+      }
+
+      .testimonial-content {
+        max-width: 100%;
+      }
+
+      .testimonial-quote {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-author {
+        font-size: 14px;
+      }
+
+      .testimonial-logo {
+        position: static;
+        text-align: right;
+        margin-top: 24px;
+        margin-bottom: 20px;
+      }
+
+      .testimonial-logo img {
+        height: 32px;
+      }
+
+      .testimonial-dots {
+        position: static;
+        margin-top: 0;
+      }
+
+      .company-logos {
+        gap: 24px;
+        padding: 30px 0;
+      }
+
+      .company-logos img {
+        height: 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 28px;
+      }
+
+      .desc {
+        font-size: 15px;
+      }
+
+      .card {
+        min-width: 260px;
+        width: 260px;
+        height: 150px;
+        padding: 18px;
+      }
+
+      .card p {
+        font-size: 15px;
+      }
+    }
+  

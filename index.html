@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Stripe Sigma UI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="usecases">
+  <div class="container">
+    <p class="label">Use cases</p>
+    <h2>How teams use Stripe Sigma</h2>
+
+    <p class="desc">
+      From founders to finance teams, anyone can effortlessly pull insights from their Stripe data – SQL knowledge not required. Simply type in your question, and the AI-powered Sigma Assistant will transform it into a query and resulting report.
+    </p>
+
+    <div class="tabs">
+      <span class="tab active">Business Operations</span>
+      <span class="tab">Finance</span>
+      <span class="tab">Data Analysis</span>
+      <span class="tab">Product Management</span>
+    </div>
+  </div>
+
+  <!-- FULL WIDTH SLIDER -->
+  <div class="slider-full">
+    <div class="scroll-trigger-left" id="scrollTriggerLeft"></div>
+    <div class="scroll-trigger-right" id="scrollTriggerRight"></div>
+    <div class="cards-row" id="cardsRow"></div>
+  </div>
+
+  <div class="container">
+    <p class="helper-text" id="helperText">Business teams use Stripe Sigma to run their company more efficiently.</p>
+  </div>
+
+  <!-- Testimonial Section -->
+  <div class="testimonial-section">
+    <div class="container">
+      <div class="testimonial-slider">
+        <div class="testimonial-track" id="testimonialTrack">
+          <!-- Slide 1 - Slack -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card bg-purple">
+              <div class="testimonial-content">
+                <p class="testimonial-quote">"Stripe Sigma has helped accelerate our financial close process. Instead of manually combining multiple data sources each month, we're now able to run a few simple queries in Sigma, enabling faster monthly reconciliation for credit card transactions."</p>
+                <p class="testimonial-author">Kelly Hofmann, Revenue Accounting</p>
+              </div>
+              <div class="testimonial-logo">
+                <svg width="140" height="48" viewBox="0 0 140 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g fill="white">
+                    <!-- Slack icon -->
+                    <rect x="8" y="8" width="8" height="8" rx="2"/>
+                    <rect x="8" y="20" width="8" height="20" rx="2"/>
+                    <rect x="20" y="8" width="20" height="8" rx="2"/>
+                    <rect x="32" y="20" width="8" height="8" rx="2"/>
+                    <rect x="20" y="32" width="8" height="8" rx="2"/>
+                    <rect x="32" y="20" width="8" height="8" rx="2"/>
+                  </g>
+                  <text x="50" y="32" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="white">slack</text>
+                </svg>
+              </div>
+              <div class="testimonial-dots">
+                <button class="testimonial-dot active" data-slide="0"></button>
+                <button class="testimonial-dot" data-slide="1"></button>
+                <button class="testimonial-dot" data-slide="2"></button>
+                <button class="testimonial-dot" data-slide="3"></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 - Green Flag -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card bg-green">
+              <div class="testimonial-content">
+                <p class="testimonial-quote">"Sigma gives us legitimate evidence to challenge a chargeback, whereas before Stripe, we had no visibility whatsoever. The new level of data and insight we can get out of Stripe compared to what we could get previously is just night and day. It really helped us improve and speed up our decision-making."</p>
+                <p class="testimonial-author">Jez Bristow, Chief Product Manager</p>
+              </div>
+              <div class="testimonial-logo">
+                <svg width="220" height="48" viewBox="0 0 220 48" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <text x="10" y="30" font-family="system-ui, sans-serif" font-size="24" font-weight="800" letter-spacing="1">GREEN FLAG</text>
+                  <path d="M180 15 L190 20 L180 25 L180 15Z" fill="white"/>
+                </svg>
+              </div>
+              <div class="testimonial-dots">
+                <button class="testimonial-dot" data-slide="0"></button>
+                <button class="testimonial-dot active" data-slide="1"></button>
+                <button class="testimonial-dot" data-slide="2"></button>
+                <button class="testimonial-dot" data-slide="3"></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 - Harri -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card bg-blue">
+              <div class="testimonial-content">
+                <p class="testimonial-quote">"With a query that took less than 5 minutes to write, our team has been able to identify unpaid invoices and recapture tens of thousands of dollars of revenue – 8 percent of failed payments – in just two months."</p>
+                <p class="testimonial-author">Steven Moldavskiy, Business Intelligence</p>
+              </div>
+              <div class="testimonial-logo">
+                <svg width="110" height="48" viewBox="0 0 110 48" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <text x="10" y="32" font-family="system-ui, sans-serif" font-size="32" font-weight="600" fill="white">harri</text>
+                </svg>
+              </div>
+              <div class="testimonial-dots">
+                <button class="testimonial-dot" data-slide="0"></button>
+                <button class="testimonial-dot" data-slide="1"></button>
+                <button class="testimonial-dot active" data-slide="2"></button>
+                <button class="testimonial-dot" data-slide="3"></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 - ClickFunnels -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card bg-orange">
+              <div class="testimonial-content">
+                <p class="testimonial-quote">"Before Stripe Sigma, we built our own tool to analyse our Stripe data, but it took our engineers weeks to build, required ongoing work to maintain and update and it wasn't always accurate. Sigma now gives all our teams accurate data without any engineering work."</p>
+                <p class="testimonial-author">Tracy Rogers, Data Scientist</p>
+              </div>
+              <div class="testimonial-logo">
+                <svg width="200" height="48" viewBox="0 0 200 48" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="18" cy="24" r="8" fill="white"/>
+                  <text x="32" y="32" font-family="system-ui, sans-serif" font-size="26" font-weight="700" fill="white">ClickFunnels</text>
+                </svg>
+              </div>
+              <div class="testimonial-dots">
+                <button class="testimonial-dot" data-slide="0"></button>
+                <button class="testimonial-dot" data-slide="1"></button>
+                <button class="testimonial-dot" data-slide="2"></button>
+                <button class="testimonial-dot active" data-slide="3"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Company Logos -->
+      <div class="company-logos">
+        <svg width="100" height="36" viewBox="0 0 100 36" fill="#8b92a8">
+          <rect x="5" y="8" width="6" height="6" rx="1.5" opacity="0.6"/>
+          <rect x="5" y="16" width="6" height="14" rx="1.5" opacity="0.6"/>
+          <rect x="13" y="8" width="14" height="6" rx="1.5" opacity="0.6"/>
+          <rect x="21" y="16" width="6" height="6" rx="1.5" opacity="0.6"/>
+          <rect x="13" y="24" width="6" height="6" rx="1.5" opacity="0.6"/>
+          <text x="32" y="24" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#8b92a8">slack</text>
+        </svg>
+        
+        <svg width="160" height="36" viewBox="0 0 160 36" fill="#8b92a8">
+          <text x="5" y="24" font-family="system-ui, sans-serif" font-size="18" font-weight="800" letter-spacing="1">GREEN FLAG</text>
+          <path d="M135 10 L143 14 L135 18 L135 10Z" opacity="0.6"/>
+        </svg>
+        
+        <svg width="80" height="36" viewBox="0 0 80 36" fill="#8b92a8">
+          <text x="5" y="26" font-family="system-ui, sans-serif" font-size="24" font-weight="600">harri</text>
+        </svg>
+        
+        <svg width="160" height="36" viewBox="0 0 160 36" fill="#8b92a8">
+          <circle cx="12" cy="18" r="6" opacity="0.6"/>
+          <text x="24" y="24" font-family="system-ui, sans-serif" font-size="20" font-weight="700">ClickFunnels</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
